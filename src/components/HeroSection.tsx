@@ -1,4 +1,4 @@
-// import shuttleImg from '../assets/spaceshuttle.png';
+import shuttleImg from '../assets/spaceshuttle.png';
 
 const HeroSection = () => {
   return (
@@ -23,9 +23,9 @@ const HeroSection = () => {
 
       <button className="launch-button">Launch Space Shuttle</button>
 
-      <div className="shuttle-placeholder">
+      <div className="shuttle-container">
        
-       {/* <img src={shuttleImg} alt="Space Shuttle"></img> */}
+       <img className="shuttle-img" src={shuttleImg} alt="Space Shuttle"></img>
 
       </div>
 

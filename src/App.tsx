@@ -4,6 +4,10 @@ import StyleSelector from './components/StyleSelector';
 import OutputDisplay from './components/OutputDisplay';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
+import HowItWorks from './components/HowItWorks';
+import AboutTwistory from './components/AboutTwistory';
+import Footer from './components/Footer';
+
 import { GoogleGenAI } from "@google/genai";
 import './App.css';
 
@@ -68,17 +72,24 @@ function App(){
   return (
     <>
     <div className="app-container">
+
     <Navbar></Navbar>
     <HeroSection></HeroSection>
-      <PromptInput prompt={prompt} setPrompt={setPrompt} />
-      <StyleSelector style={style} setStyle={setStyle} />
+    <HowItWorks />
+    <AboutTwistory />
+    <Footer/>
 
-      <button onClick={handleGenerate} disabled={!prompt.trim() || loading}>
-        {loading ? "Generating..." : "Generate"}
-      </button>
+    {/* <PromptInput prompt={prompt} setPrompt={setPrompt} />
+    <StyleSelector style={style} setStyle={setStyle} />
 
-      <OutputDisplay output={output} />
+    <button onClick={handleGenerate} disabled={!prompt.trim() || loading}>
+      {loading ? "Generating..." : "Generate"}
+    </button>
+
+    <OutputDisplay output={output} /> */}
+
     </div>
+    
     </>
   );
 

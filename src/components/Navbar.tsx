@@ -7,7 +7,7 @@ const Navbar = () => {
 
       <div className="navbar-right">
         <a href="#how-it-works">How It Works </a>
-        <a href="#why-twistory">Why Twistory </a>
+        <a href="#why-twistory">About Twistory </a>
         <a href="#contact">Contact</a>
       </div>
     </nav>

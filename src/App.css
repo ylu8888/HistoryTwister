@@ -3,8 +3,8 @@ body, html {
   padding: 0;
   width: 100%;
   display: flex;
-  justify-content: center; /* center horizontally */
-  background-color: #111; /* optional dark bg */
+  justify-content: center; 
+  background-color: #111; 
   font-family: sans-serif;
 }
 
@@ -12,10 +12,10 @@ body, html {
 .app-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centers children */
+  align-items: center; 
   width: 100%;
-  max-width: 1200px; /* limit container width */
-  padding: 0 20px; /* side padding */
+  max-width: 1600px; 
+  padding: 0 20px; 
   box-sizing: border-box;
 }
 
@@ -24,19 +24,14 @@ body, html {
   position: fixed;
   top: 0;
   width: 100%;      
-  height: 70px;
-
+  height: 60px;
   background-color: rgba(0, 0, 0, 0.85);
   color: white;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-
   backdrop-filter: blur(4px);
   z-index: 1000;
-
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -44,6 +39,7 @@ body, html {
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 1px;
+  color: #5f0cb7; 
 }
 
 .navbar-left{
@@ -76,8 +72,7 @@ body, html {
 /* HERO SECTION */
 .hero-container {
   text-align: center;
-  padding-top: 80px; 
-  
+  padding-top: 65px; 
   max-width: 900px;
   margin: 0 auto;
   color: white;
@@ -88,9 +83,10 @@ body, html {
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: 40px;
   font-weight: 700;
   margin-bottom: 12px;
+  
 }
 
 .hero-subtext {
@@ -114,7 +110,7 @@ body, html {
   color: white;
   padding: 8px 14px;
   border-radius: 16px;
-  font-size: 0.95rem; 
+  font-size: 0.85rem; 
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   min-width: 140px; 
@@ -122,9 +118,9 @@ body, html {
 }
 
 .launch-button {
-  background: #ffc300; 
+  background: #5f0cb7; 
   color: black;
-  font-size: 1.1rem; 
+  font-size: 1rem; 
   font-weight: 600;
   padding: 12px 24px; 
   border: none;
@@ -136,14 +132,14 @@ body, html {
 
 .launch-button:hover {
   transform: scale(1.05);
-  background: #ffcf33;
+  background: #5903bc;
 }
 
-.shuttle-placeholder {
+.shuttle-container {
   height: 220px;
   width: 100%;
-  max-width: 600px; 
-  border: 2px dashed #888;
+  max-width: 400px; 
+  border: 2px solid #888;
   border-radius: 14px;
   display: flex;
   justify-content: center;
@@ -152,5 +148,147 @@ body, html {
   font-size: 1.1rem;
   margin-bottom: 80px;
 }
+
+.shuttle-img{
+  width: 100%;
+  border-radius: 14px;
+}
+
+
+/* HOW IT WORKS SECTION */
+.how-it-works-container {
+  max-width: 900px;
+  margin: 10px auto; 
+  padding: 0 20px;
+  text-align: center;
+  color: white;
+}
+
+.how-it-works-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #5f0cb7; 
+}
+
+.how-it-works-text {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #cccccc;
+  margin-bottom: 40px;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.step {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 200px;
+  flex: 1 1 250px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.step h3 {
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+.step p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* WHY TWISTORY */
+.why-built-container {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+  color: white;
+}
+
+.why-built-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #5f0cb7; 
+}
+
+.why-built-text {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #cccccc;
+  margin-bottom: 25px;
+}
+
+.why-built-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.icon-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 120px;
+  flex: 1 1 120px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1.1rem;
+}
+
+.icon-card p {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+/* FOOTER SECTION */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 145.5%; 
+  bottom: 0;
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  backdrop-filter: blur(4px);
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+  
+}
+
+.footer-left {
+  font-weight: 500;
+}
+
+.footer-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.footer-right a {
+  color: #5f0cb7; 
+  text-decoration: none;
+  transition: opacity 0.2s, text-shadow 0.2s;
+}
+
+.footer-right a:hover {
+  opacity: 0.8;
+  text-shadow: 0 0 4px #ffc300;
+}
+
+
 
 
