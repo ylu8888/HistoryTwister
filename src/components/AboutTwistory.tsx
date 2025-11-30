@@ -21,16 +21,16 @@ const AboutTwistory = () => {
 
       <div className="why-built-icons">
         <div className="icon-card">
-          🏛️
-          <p>History Enjoyer</p>
+          🤖
+          <p>Gemini AI</p>
+        </div>
+        <div className="icon-card">
+          ⚙️
+          <p>60 Queries/hr</p>
         </div>
         <div className="icon-card">
           💻
-          <p>Coding Project</p>
-        </div>
-        <div className="icon-card">
-          🤖
-          <p>AI Shenanigans</p>
+          <p>React + TypeScript</p>
         </div>
       </div>
     </section>
