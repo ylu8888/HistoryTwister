@@ -3,7 +3,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer-container">
+    <>
       <div className="footer-left">
         <span>© {currentYear} Twistory</span>
       </div>
@@ -17,7 +17,8 @@ const Footer = () => {
           GitHub
         </a>
       </div>
-    </footer>
+      </>
+   
   );
 };
 

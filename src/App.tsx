@@ -74,10 +74,22 @@ function App(){
     <div className="app-container">
 
     <Navbar></Navbar>
-    <HeroSection></HeroSection>
-    <HowItWorks />
-    <AboutTwistory />
-    <Footer/>
+
+    <div id="home">
+      <HeroSection />
+    </div>
+
+    <div id="how">
+      <HowItWorks />
+    </div>
+
+    <div id="about">
+      <AboutTwistory />
+    </div>
+
+    <div className="FooterBigContainer" id="contact">
+      <Footer />
+    </div>
 
     <PromptInput prompt={prompt} setPrompt={setPrompt} />
     <StyleSelector style={style} setStyle={setStyle} />

@@ -6,6 +6,7 @@ body, html {
   justify-content: center; 
   background-color: #111; 
   font-family: sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* APP CONTAINER */
@@ -79,6 +80,7 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: -20px;
  
 }
 
@@ -159,7 +161,7 @@ body, html {
 .how-it-works-container {
   max-width: 900px;
   margin: 10px auto; 
-  margin-top: 30px;
+  margin-top: 80px;
   padding: 0 20px;
   text-align: center;
   color: white;
@@ -254,7 +256,22 @@ body, html {
 }
 
 /* FOOTER SECTION */
-.footer-container {
+
+.FooterBigContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 145.5%; 
+  bottom: 0;
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  backdrop-filter: blur(4px);
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+/* .footer-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -267,7 +284,7 @@ body, html {
   font-size: 0.9rem;
   flex-wrap: wrap;
   
-}
+} */
 
 .footer-left {
   font-weight: 500;
