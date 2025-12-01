@@ -10,7 +10,9 @@ body, html {
   font-family: 'Monserrat', sans-serif;
   scroll-behavior: smooth;
 
-  background: linear-gradient(180deg, #07000e 0%, #110232 50%, #0c0117 100%);
+  /* background: linear-gradient(180deg, #07000e 0%, #110232 50%, #0c0117 100%); */
+   background: linear-gradient(180deg, #0a0014 0%, #110233 50%, #0c0117 100%);
+
 }
 
 /* APP CONTAINER */
@@ -49,7 +51,7 @@ body, html {
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.8px;
-  color: #5f0cb7; 
+  color: #d9d4de; 
 
 }
 
@@ -174,14 +176,14 @@ body, html {
   font-size: 1.1rem;
   margin-bottom: 100px;
 
-  transition: all 1s ease-in-out;
+  transition: all 1.5s ease-in-out;
   overflow: hidden;
 }
 
 .shuttle-img{
   width: 100%;
   border-radius: 14px;
-  transition: all 1s ease-in-out;
+  transition: all 2s ease-in-out;
 }
 
 .shuttle-launch {
@@ -210,10 +212,11 @@ body, html {
 }
 
 .how-it-works-title {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #480391; 
+  /* color: #3e0573;  */
+  color: #4e0593; 
 }
 
 .how-it-works-text {
@@ -260,10 +263,10 @@ body, html {
 }
 
 .why-built-title {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 25px;
-  color: #480391; 
+  color: #45067f;
 }
 
 .why-built-text {
