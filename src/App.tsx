@@ -7,11 +7,11 @@ import HeroSection from './components/HeroSection';
 import HowItWorks from './components/HowItWorks';
 import AboutTwistory from './components/AboutTwistory';
 import Footer from './components/Footer';
-const apiKey = import.meta.env.API_KEY;
-
 
 import { GoogleGenAI } from "@google/genai";
 import './App.css';
+
+const apiKey = import.meta.env.API_KEY;
 
 function App(){
   const[output, setOutput] = useState(''); //Ai generated output
