@@ -145,7 +145,7 @@ body, html {
 
 .launch-button {
   background: linear-gradient(180deg, #4e0893 0%, #400eae 50%, #28054a 100%);
-  color: black;
+  color: #cccccc;
   font-size: 1rem; 
   font-weight: 600;
   width: 150px;
