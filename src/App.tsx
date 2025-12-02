@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 import { GoogleGenAI } from "@google/genai";
 import './App.css';
 
-const apiKey = import.meta.env.API_KEY;
+const apiKey = import.meta.env.VITE_API_KEY;
 
 function App(){
   const[output, setOutput] = useState(''); //Ai generated output
