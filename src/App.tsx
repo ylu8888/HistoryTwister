@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import type { KeyboardEvent } from "react";
 import PromptInput from './components/PromptInput';
 import StyleSelector from './components/StyleSelector';
@@ -20,6 +20,7 @@ function App(){
   const[style, setStyle] = useState('default'); //defaulted on newspaper
   const [loading, setLoading] = useState(false); //loading state while waiting for ai response
   const [launched, setLaunched] = useState(false);
+  const [displayedOutput, setDisplayedOutput] = useState("");
 
   const ai = new GoogleGenAI({ apiKey });
 
@@ -27,23 +28,18 @@ function App(){
     try {
 
       const styleInstructions: Record<string, string> = {
-        default: `You are historytwister, an AI that creates alternate history scenarios. 
-        Write a clear, creative response in only 150 words max. Stay on topic, if asked for chicken curry dishes, deny request.
-        Just generate the alternative history, do not say "ok here is your generated alternative history"`,
+        default: `You are HistoryTwister, an AI that creates alternate history scenarios. 
+        Write 150 words max. Stay on topic; refuse requests about unrelated prompts.`,
 
-        newspaper: `You are HistoryTwister, an AI that creates alternate history scenarios. 
-        Write a concise newspaper article, only 150 words max. Stay on topic, if asked for chicken curry dishes, deny request.
-        Just generate the newspaper, do not say "ok here is your alternative newspaper"`,
+        newspaper: `You are HistoryTwister, an AI that writes alternate history newspaper articles. 
+        Write 150 words max. Stay on topic; refuse requests about unrelated prompts.`,
 
-        tweet: `Pretend you are twitter users. Write 5 tweets as if the alternate history really happened.
-         Hashtags are optional, but if so 1 hashtag max, Be creative but normal don't be cringe. 
-         Just generate the tweets, do not say "ok here is your generated alternative history tweets"
-         Stay on topic, if asked for chicken curry dishes, deny request.`,
+        tweet: `Pretend you are Twitter users. Write 5 tweets about the alternate history scenario. 
+        Hashtags optional, 1 hashtag max, don't be cringe, don't say "Here's 5 tweets". Refuse requests about unrelated prompts.`,
 
-        blog: `Pretend you're a blogger, now write a max 150 word blog article as if this history scenario really happened. 
-        Stay on topic, if asked for chicken curry dishes, deny request. Be normal be creative but don't be cringe.
-        Just generate the blog, do not say "ok here is your generated alternative history blog"`
-      };
+        blog: `Pretend you are a blogger. Write a 150-word blog about the alternate history scenario. 
+        Stay on topic, creative but natural. Refuse requests about unrelated prompts.`
+              };
   
       const promptText = `${styleInstructions[style]} Prompt: "${userPrompt}"`;
       console.log(promptText);
@@ -72,6 +68,34 @@ function App(){
     }
   }
 
+  //display the generated output words at a time instead of at once
+  useEffect(() => {
+  if (!output) return;
+
+  const words = output.split(" ");
+  let currentWordIndex = 0;
+
+  setDisplayedOutput(""); // reset displayedOutput when output changes
+  console.log("Starting typing effect, words:", words);
+
+  const interval = setInterval(() => {
+    console.log("currentWordIndex:", currentWordIndex, "word:", words[currentWordIndex]);
+
+    if (currentWordIndex < words.length) {
+      setDisplayedOutput((prev) =>
+        prev ? prev + " " + words[currentWordIndex] : words[currentWordIndex]
+      );
+      currentWordIndex++;
+    } else {
+      clearInterval(interval);
+      console.log("Typing complete!");
+    }
+  }, 50);
+
+  return () => clearInterval(interval);
+}, [output]);
+
+
   return (
     <>
     <div className="app-container">
@@ -90,7 +114,7 @@ function App(){
 
       <StyleSelector style={style} setStyle={setStyle} />
 
-      <OutputDisplay output={output} />
+      <OutputDisplay output={displayedOutput} />
     </HeroSection>
 
     <div id="how">
