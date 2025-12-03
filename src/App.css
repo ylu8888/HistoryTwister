@@ -11,7 +11,7 @@ body, html {
   scroll-behavior: smooth;
 
   /* background: linear-gradient(180deg, #07000e 0%, #110232 50%, #0c0117 100%); */
-   background: linear-gradient(180deg, #0a0014 0%, #110233 50%, #0c0117 100%);
+   background: linear-gradient(180deg, #0a0014 0%, #1b0451 50%, #0c0117 100%);
 
 }
 
@@ -144,7 +144,7 @@ body, html {
 }
 
 .launch-button {
-  background: linear-gradient(180deg, #4e0893 0%, #400eae 50%, #28054a 100%);
+  background: linear-gradient(180deg, #4e0893 0%, #3c0ea0 50%, #540d9c 100%);
   color: #cccccc;
   font-size: 1rem; 
   font-weight: 600;
@@ -159,7 +159,7 @@ body, html {
 
 .launch-button:hover {
   transform: scale(1.05);
-  background: #5903bc;
+  background: linear-gradient(180deg, #360db0 0%, #5a17eb 50%, #300c9d 100%);
   
 }
 
@@ -167,7 +167,7 @@ body, html {
   height: 220px;
   width: 100%;
   max-width: 46%; 
-  border: 2px solid #888;
+  border: 2px solid #431795;
   border-radius: 14px;
   display: flex;
   justify-content: center;
@@ -190,8 +190,9 @@ body, html {
   height: 85vh !important;
   max-width: 100vw !important;
   border-radius: 20px;
-  border: 2px solid #aaa;
+  border: 2px solid #3a0895;
   margin-top: -10px;
+  
 }
 
 .shuttle-launch .shuttle-img {
@@ -217,7 +218,8 @@ body, html {
   font-weight: 700;
   margin-bottom: 20px;
   /* color: #3e0573;  */
-  color: #4e0593; 
+  /* color: #4e0593;  */
+  color: #480984;
 }
 
 .how-it-works-text {
@@ -370,11 +372,13 @@ body, html {
   opacity: 0;
   transition: opacity 1s ease-in-out;
   pointer-events: none; 
+  
 }
 
 .cockpit-ui.visible {
   opacity: 1;
   pointer-events: auto;
+  
 }
 
 /* AI INPUT SEARCH BAR */
