@@ -458,9 +458,9 @@ body, html {
   padding: 20px;                
   margin-top: 2%;    
   max-width: 800px;             
-  width: 77%;    
+  width: 80%;    
   justify-content: center;
-  margin-left: 9%;
+  margin-left: 7%;
   display: flex;
   font-size: 14px;                
   box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
