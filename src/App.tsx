@@ -72,27 +72,28 @@ function App(){
   useEffect(() => {
   if (!output) return;
 
-  const words = output.split(" ");
+  const words = output.split(" ").filter(Boolean); // remove empty strings
   let currentWordIndex = 0;
 
-  setDisplayedOutput(""); // reset displayedOutput when output changes
+  setDisplayedOutput(""); // reset displayed output
   console.log("Starting typing effect, words:", words);
 
-  const interval = setInterval(() => {
-    console.log("currentWordIndex:", currentWordIndex, "word:", words[currentWordIndex]);
-
-    if (currentWordIndex < words.length) {
-      setDisplayedOutput((prev) =>
-        prev ? prev + " " + words[currentWordIndex] : words[currentWordIndex]
-      );
-      currentWordIndex++;
-    } else {
-      clearInterval(interval);
+  const typeWord = () => {
+    if (currentWordIndex >= words.length) {
       console.log("Typing complete!");
+      return;
     }
-  }, 50);
 
-  return () => clearInterval(interval);
+    const word = words[currentWordIndex];
+    console.log("Typing word:", word, "index:", currentWordIndex);
+
+    setDisplayedOutput((prev) => (prev ? prev + " " + word : word));
+    currentWordIndex++;
+
+    setTimeout(typeWord, 50); // 50ms per word
+  };
+
+  typeWord();
 }, [output]);
 
 
