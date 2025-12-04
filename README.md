@@ -4,7 +4,7 @@
 
 **Website that generates AI-powered alternative history scenarios**
 
-* Built using React, TypeScript, and Gemini AI API
+* Frontend built using React + TypeScript, the API is Google's Gemini AI
   
 * Microsoft Azure cloud-hosted frontend
   
