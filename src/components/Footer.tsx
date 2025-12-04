@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <>
       <div className="footer-left">
-        <span>© {currentYear} Twistory</span>
+        <span>© {currentYear} HistoryTwister</span>
       </div>
 
       <div className="footer-right">

@@ -2,10 +2,10 @@
 const AboutTwistory = () => {
   return (
     <section className="why-built-container">
-      <h2 className="why-built-title">About Twistory</h2>
+      <h2 className="why-built-title">About</h2>
 
       <p className="why-built-text">
-        I made Twistory because I really enjoy history and it's interesting to read about. 
+        I made HistoryTwister because I really enjoy history and it's interesting to read about. 
         I also like imagining what-if scenarios in my head of different timelines and how the future might be different today.
        
       </p>

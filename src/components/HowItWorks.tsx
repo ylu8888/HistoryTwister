@@ -4,7 +4,7 @@ const HowItWorks = () => {
     <section className="how-it-works-container">
       <h2 className="how-it-works-title">How It Works</h2>
       <p className="how-it-works-text">
-        Twistory uses the power of Gemini AI to generate alternative history scenarios <br />
+        HistoryTwister uses the power of Gemini AI to generate alternative history scenarios <br />
         Simply type a "what-if" prompt, choose a style, and watch the AI twist history in creative & funny ways
       </p>
 

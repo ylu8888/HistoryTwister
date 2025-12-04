@@ -16,12 +16,12 @@ const Navbar: React.FC<NavbarProps> = ({ resetLaunch, resetPromptAndStyle }) => 
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <h1 className="logo" onClick={handleLogoClick}>Twistory</h1>
+        <h1 className="logo" onClick={handleLogoClick}>HistoryTwister</h1>
       </div>
 
       <div className="navbar-right">
         <a href="#how">How It Works</a>
-        <a href="#about">About Twistory</a>
+        <a href="#about">About</a>
         {/* <a 
           href="https://www.linkedin.com/in/yang-lu-a47441265/"
           target="_blank"
