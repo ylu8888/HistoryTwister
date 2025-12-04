@@ -7,11 +7,14 @@ interface PromptInputProps {
     prompt: string,
     setPrompt: (value: string) => void; 
     onKeyPress?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+    spellCheck?: boolean; 
+    onTwist?: () => void;
+    loading?: boolean;
 }
 
-const PromptInput = ({ prompt, setPrompt, onKeyPress }: PromptInputProps) => {
+const PromptInput = ({ prompt, setPrompt, onKeyPress, spellCheck, onTwist, loading}: PromptInputProps) => {
     return(
-        <div>
+        <div className="prompt-wrapper">
            <input
             type="text"
             className="prompt-searchbar"
@@ -19,7 +22,20 @@ const PromptInput = ({ prompt, setPrompt, onKeyPress }: PromptInputProps) => {
             onChange={(e) => setPrompt(e.target.value)}
             onKeyPress={onKeyPress}
             placeholder='Enter your "what-if" prompt...'
+            spellCheck={spellCheck ?? false}
+            
             />
+
+            <button
+                className={`twist-btn ${loading ? "loading" : ""}`}
+                onClick={onTwist}
+                disabled={loading}
+            >
+                {loading ? <div className="spinner"></div> : "Twist"}
+            </button>
+            
+
+
         </div>
     )
 }
