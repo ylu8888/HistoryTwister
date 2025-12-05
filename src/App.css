@@ -495,16 +495,19 @@ body, html {
 
 .output-container {
   position: absolute;
-  top: 112%;   
+  top: 110%;   
   background-color: rgba(0, 0, 0, 0.8);       
   color: rgb(228, 222, 222);               
   border-radius: 20px;          
-  padding: 20px;                
-  margin-top: 2%;    
+  
+  padding-left: 20px;
+  padding-right: 20px;  
+  padding-top: 0px;            
+  margin-top: 0%;    
   max-width: 800px;             
-  width: 80%;    
+  width: 90%;    
   justify-content: center;
-  margin-left: 7%;
+  margin-left: 2%;
   display: flex;
   font-size: 14px;                
   box-shadow: 0 4px 12px rgba(0,0,0,0.15); 

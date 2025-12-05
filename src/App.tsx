@@ -33,14 +33,14 @@ function App(){
         Do not include greetings,intros, just start with scenario`,
 
         newspaper: `You are HistoryTwister, an AI that writes alternate history newspaper articles. 
-        Write 150 words max. Stay on topic; refuse requests about unrelated prompts.
+        Write 130 words max. Stay on topic; refuse requests about unrelated prompts.
         Do not include greetings,intros, just start with scenario`,
 
-        tweet: `Pretend you are Twitter users. Write 5 tweets about the alternate history scenario. 
-        Hashtags optional, 1 hashtag max, don't be cringe, don't say "Here's 5 tweets". Refuse requests about unrelated prompts.
-        Do not include greetings,intros, just start with scenario`,
+        tweet: `Pretend you are Twitter users. Write 5 tweets as if in the alternate history scenario. 
+        Hashtags optional, 1 hashtag max, don't say "Here's 5 tweets". Refuse requests about unrelated prompts.
+        Do not include greetings/intros, just start with scenario`,
 
-        blog: `Pretend you are a blogger. Write a 150-word blog about the alternate history scenario. 
+        blog: `Pretend you are a blogger. Write a 150-word blog about living in alternate history scenario. 
         Stay on topic, creative but natural. Refuse requests about unrelated prompts.
         Do not include greetings,intros, just start with scenario`
               };
@@ -102,11 +102,36 @@ function App(){
     setDisplayedOutput((prev) => (prev ? prev + " " + word : word));
     currentWordIndex++;
 
-    setTimeout(typeWord, 55); // 50ms per word
+    setTimeout(typeWord, 55); // 55ms per word
   };
 
   typeWord();
 }, [output]);
+
+//for parsing the AI generated output (newlines, paragraphs, bold, etc)
+const parseOutput = (text: string) => {
+  if (!text.trim()) return null;
+
+  const paragraphs = text.split(/\n\n/);
+
+  return paragraphs.map((para, idx) => {
+    
+    //for bolds
+    const parts = para.split(/(\*\*[^*]+\*\*)/g); 
+
+    return (
+      <p key={idx} style={{ marginBottom: "1em" }}>
+        {parts.map((part, i) => {
+          if (part.startsWith("**") && part.endsWith("**")) {
+            return <strong key={i}>{part.slice(2, -2)}</strong>;
+          } else {
+            return part;
+          }
+        })}
+      </p>
+    );
+  });
+};
 
 
   return (
@@ -132,7 +157,8 @@ function App(){
 
       <StyleSelector style={style} setStyle={setStyle} />
 
-      <OutputDisplay output={displayedOutput} />
+      <OutputDisplay output={parseOutput(displayedOutput)} />
+
     </HeroSection>
 
     <div id="how">

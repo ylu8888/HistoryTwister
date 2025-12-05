@@ -24,7 +24,7 @@ const StyleSelector: React.FC<StyleSelectorProps> = ({ style, setStyle }) => {
         className={style === "tweet" ? "active" : ""}
         onClick={() => setStyle("tweet")}
       >
-        Tweet
+        Tweets
       </button>
       <button
         className={style === "blog" ? "active" : ""}
