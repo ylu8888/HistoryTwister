@@ -22,8 +22,6 @@
 
 ## Features 
 * Integrates with Google Gemini AI API for content generation. 60 queries per hour
-* Serverless API implemented using Azure Functions to handle AI requests securely
-* Hosted on Azure Cloud, enabling scalable deployment without managing servers
 * Style selector with options: Default, Newspaper, Blog, Tweet
 * AI output displayed word-by-word for dynamic, real-time reading experience
 * Parses and respects line breaks, indents, paragraphs, and bold in API responses
