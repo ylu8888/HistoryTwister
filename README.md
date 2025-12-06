@@ -20,6 +20,10 @@
 
 <img width="1597" height="997" alt="image" src="https://github.com/user-attachments/assets/69c66918-2101-45a0-8c8a-620f710d8f9a" />
 
+## 🤖 About
+
+<img width="2515" height="1401" alt="image" src="https://github.com/user-attachments/assets/8bb099b9-85b1-47e1-be29-fe3313f7b171" />
+
 ## Features 
 * Integrates with Google Gemini AI API for content generation. 60 queries per hour
 * Style selector with options: Default, Newspaper, Blog, Tweet
