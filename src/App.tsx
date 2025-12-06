@@ -36,7 +36,7 @@ function App(){
         Write 130 words max. Stay on topic; refuse requests about unrelated prompts.
         Do not include greetings,intros, just start with scenario`,
 
-        tweet: `Pretend you are Twitter users. Write 5 tweets as if in the alternate history scenario. 
+        tweet: `Pretend you are Twitter users. Write 5 tweets as if in the alternate history scenario, 20-30 words max. 
         Hashtags optional, 1 hashtag max, don't say "Here's 5 tweets". Refuse requests about unrelated prompts.
         Do not include greetings/intros, just start with scenario`,
 

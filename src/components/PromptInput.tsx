@@ -29,7 +29,7 @@ const PromptInput = ({ prompt, setPrompt, onKeyPress, spellCheck, onTwist, loadi
             <button
                 className={`twist-btn ${loading ? "loading" : ""}`}
                 onClick={onTwist}
-                disabled={loading}
+                disabled={loading || !prompt.trim()}
             >
                 {loading ? <div className="spinner"></div> : "Twist"}
             </button>
