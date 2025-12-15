@@ -24,6 +24,7 @@ dist-ssr
 *.sw?
 
 .env
+deno.lock
 
 
 # Local Netlify folder

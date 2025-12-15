@@ -11,9 +11,8 @@ const AboutTwistory = () => {
       </p>
 
       <p className="why-built-text">
-        This website started as a personal CS project where I could combine my passion for history with my interest in coding.  
-        I built it using React + TypeScript, hosted on Azure Static Web Apps, and used a serverless API proxy via Azure Functions
-        to securely access the API.
+        This website started as a personal CS project where I could combine my interest in history with my passion for coding.  
+        I built it using React + TypeScript and created a serverless API proxy using Netlify Functions to securely access the API.
       </p>
 
       <p className="why-built-text">
@@ -31,7 +30,7 @@ const AboutTwistory = () => {
         </div>
         <div className="icon-card">
           💻
-          <p>React + TypeScript</p>
+          <p>Netlify Functions</p>
         </div>
       </div>
     </section>
