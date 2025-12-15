@@ -2,7 +2,7 @@
 
 ## Website Link: https://historytwister.netlify.app/ 
 
-**Website that generates AI-powered alternate history scenarios
+**Website that generates AI-powered alternate history scenarios**
 
 ## 🗺️ WEBSITE PREVIEW
 
