@@ -10,7 +10,7 @@ const OutputDisplay: React.FC<OutputDisplayProps> = ({ output }) => {
 
   return (
     <div className="output-container">
-      <p>{output}</p>
+      {output}
     </div>
   );
 };

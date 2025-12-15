@@ -9,10 +9,10 @@ import HowItWorks from './components/HowItWorks';
 import AboutTwistory from './components/AboutTwistory';
 import Footer from './components/Footer';
 
-import { GoogleGenAI } from "@google/genai";
+// import { GoogleGenAI } from "@google/genai";
 import './App.css';
 
-const apiKey = import.meta.env.VITE_API_KEY;
+// const apiKey = import.meta.env.VITE_API_KEY;
 
 function App(){
   const[output, setOutput] = useState(''); //Ai generated output
@@ -22,51 +22,76 @@ function App(){
   const [launched, setLaunched] = useState(false);
   const [displayedOutput, setDisplayedOutput] = useState("");
 
-  const ai = new GoogleGenAI({ apiKey });
+  // const ai = new GoogleGenAI({ apiKey });
 
-  const generateAI = async (userPrompt: string, style: string): Promise<string> => {
-    try {
+  // const generateAI = async (userPrompt: string, style: string): Promise<string> => {
+  //   try {
 
-      const styleInstructions: Record<string, string> = {
-        default: `You are HistoryTwister, an AI that creates alternate history scenarios. 
-        Write 150 words max. Stay on topic; refuse requests about unrelated prompts.
-        Do not include greetings,intros, just start with scenario`,
+  //     const styleInstructions: Record<string, string> = {
+  //       default: `You are HistoryTwister, an AI that creates alternate history scenarios. 
+  //       Write 150 words max. Stay on topic; refuse requests about unrelated prompts.
+  //       Do not include greetings,intros, just start with scenario`,
 
-        newspaper: `You are HistoryTwister, an AI that writes alternate history newspaper articles. 
-        Write 130 words max. Stay on topic; refuse requests about unrelated prompts.
-        Do not include greetings,intros, just start with scenario`,
+  //       newspaper: `You are HistoryTwister, an AI that writes alternate history newspaper articles. 
+  //       Write 130 words max. Stay on topic; refuse requests about unrelated prompts.
+  //       Do not include greetings,intros, just start with scenario`,
 
-        tweet: `Pretend you are Twitter users. Write 5 tweets as if in the alternate history scenario, 20-30 words max. 
-        Hashtags optional, 1 hashtag max, don't say "Here's 5 tweets". Refuse requests about unrelated prompts.
-        Do not include greetings/intros, just start with scenario`,
+  //       tweet: `Pretend you are Twitter users. Write 5 tweets as if in the alternate history scenario, 20-30 words max. 
+  //       Hashtags optional, 1 hashtag max, don't say "Here's 5 tweets". Refuse requests about unrelated prompts.
+  //       Do not include greetings/intros, just start with scenario`,
 
-        blog: `Pretend you are a blogger. Write a 150-word blog about living in alternate history scenario. 
-        Stay on topic, creative but natural. Refuse requests about unrelated prompts.
-        Do not include greetings,intros, just start with scenario`
-              };
+  //       blog: `Pretend you are a blogger. Write a 150-word blog about living in alternate history scenario. 
+  //       Stay on topic, creative but natural. Refuse requests about unrelated prompts.
+  //       Do not include greetings,intros, just start with scenario`
+  //             };
   
-      const promptText = `${styleInstructions[style]} Prompt: "${userPrompt}"`;
-      console.log(promptText);
+  //     const promptText = `${styleInstructions[style]} Prompt: "${userPrompt}"`;
+  //     console.log(promptText);
   
-      const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
-        contents: promptText,
-      });
+  //     const response = await ai.models.generateContent({
+  //       model: "gemini-2.5-flash",
+  //       contents: promptText,
+  //     });
       
-      console.log(response.text);
-      return response.text ?? "Error: no text returned from AI";
+  //     console.log(response.text);
+  //     return response.text ?? "Error: no text returned from AI";
 
-    } catch (err) {
-      console.error(err);
+  //   } catch (err) {
+  //     console.error(err);
+  //     return "Error generating AI text";
+  //   }
+  // }
+
+    const generateAI = async (userPrompt: string, style: string) => {
+  try {
+    const response = await fetch("/.netlify/functions/generateAI", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt: userPrompt, style }),
+    });
+
+    if (!response.ok) {
+      const text = await response.text();
+      console.error("Netlify function error:", text);
       return "Error generating AI text";
     }
+
+    const data = await response.json();
+    console.log("this is the data result:", data)
+    return data.output ?? "Error: no output from AI";
+  } catch (err) {
+    console.error(err);
+    return "Error generating AI text";
   }
+};
+
 
   //generate Ai output when user presses enter
   const handleKeyPress = async (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       setLoading(true);
       const result = await generateAI(prompt, style);
+      console.log("this is the result", result)
       setOutput(result);
       setLoading(false);
       console.log(loading);
