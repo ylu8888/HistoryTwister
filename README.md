@@ -2,7 +2,7 @@
 
 ## Website Link: https://historytwister.netlify.app/ 
 
-**Website that generates AI-powered alternate history scenarios using a serverless API proxy via Netlify Functions. Used React, TypeScript, and Gemini API.**
+**Website that generates AI-powered alternate history scenarios
 
 ## 🗺️ WEBSITE PREVIEW
 
@@ -25,6 +25,7 @@
 <img width="2515" height="1401" alt="image" src="https://github.com/user-attachments/assets/8bb099b9-85b1-47e1-be29-fe3313f7b171" />
 
 ## Features 
+* Fully built with React + TypeScript and styled for a clean, responsive interface.
 * Integrates with Google Gemini API for content generation. 60 queries per hour
 * Uses a serverless API proxy via Netlify Functions to securely handle API requests
 * Style selector with options: Default, Newspaper, Blog, Tweet
